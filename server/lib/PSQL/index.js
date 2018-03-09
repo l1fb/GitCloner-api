@@ -3,7 +3,7 @@ import db from '../../database';
 export const createDB = async () => {
   try {
     await db.queryAsync(
-      'createdb clonerdb'
+      'CREATE DATABASE clonerdb'
     )
     console.log('Succesfully created DB');
   } catch (err) {
@@ -14,9 +14,10 @@ export const createDB = async () => {
 export const dropDB = async () => {
   try {
     await db.queryAsync(
-      'dropdb --if-exists clonerdb'
+      'DROP DATABASE IF EXISTS clonerdb'
     )
+    console.log('Successfully dropped DB');
   } catch (err) {
-    console.log('could not drop db:', err)
+    console.log('could not drop db:', err);
   }
 }

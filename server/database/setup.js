@@ -5,7 +5,6 @@ import {
 
 const setup = async () => {
   await dropDB();
-  await createDB();
   process.exit();
 };
 
