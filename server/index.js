@@ -2,6 +2,7 @@ const express = require('express');
 const body = require('body-parser');
 
 require('babel-register');
+require('babel-polyfill');
 require('./database');
 require('./database/setup');
 
