@@ -1,1 +1,0 @@
-//export query command in a template literal
