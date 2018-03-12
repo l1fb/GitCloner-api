@@ -1,6 +1,6 @@
 //export query command in a template literal
 
-export default createStudent = () => {
+export default createStudentTable = () => {
   `
   CREATE TABLE IF NOT EXISTS studentTable
   (
