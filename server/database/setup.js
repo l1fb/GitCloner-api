@@ -7,6 +7,7 @@ import {
 
 const setup = async () => {
   // await dropDB();
+  await createCohortTable();
   await createStudentTable();
   process.exit();
 };

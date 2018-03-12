@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "setup": "./server/database/setup.js",
     "start": "nodemon server",
     "test": "test"
   },
