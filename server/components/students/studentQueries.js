@@ -9,7 +9,7 @@ import {
 // export the queries
 export const addStudentQuery = async (body) => {
   try {
-    const addedStudent = await db.asyncQuery(addStudent(body))
+    const addedStudent = await db.queryAsync(addStudent(body))
     console.log("Successfully added a student");
     return addedStudent;
   } catch (err) {
@@ -19,7 +19,7 @@ export const addStudentQuery = async (body) => {
 
 export const deleteStudentQuery = async (body) => {
   try {
-    await db.asyncQuery(deleteStudent(body))
+    await db.queryAsync(deleteStudent(body))
     console.log(`Sucessfully delete the student with username: ${body}`);
   } catch (err) {
     console.log(`Could not delete ${body}`);
@@ -28,7 +28,7 @@ export const deleteStudentQuery = async (body) => {
 
 export const getStudentQuery = async (body) => {
   try {
-    await db.asyncQuery(getStudentsFromCohort(body));
+    await db.queryAsync(getStudentsFromCohort(body));
     console.log(`Get request successful - ${body}`);
   } catch (err) {
     console.log(`Could not get username: ${body}`);
