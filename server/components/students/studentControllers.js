@@ -7,8 +7,8 @@ import {
 //exports the controller
 
 export const getStudentsFromCohort = async (req, res) => {
-  try{
-    const students = getStudentQuery(req.param);
+  try {
+    const students = await getStudentQuery(req.param);
     res.status(200).send(students);
   } catch (err) {
     console.log('Student controller err:', err);
