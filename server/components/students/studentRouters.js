@@ -2,7 +2,8 @@ import express from 'express';
 
 //import controller
 import {
-  studentControllers
+  addStudent,
+  removeStudent
 } from './studentControllers';
 
 //delcare express.Router();
@@ -10,8 +11,12 @@ const router = express.Router();
 
 //invokes the function per routes endpoint
 router.route('/addStudent')
-  .post(studentController);
+  .post(addStudent);
+
+router.route('/removeStudent')
+  .delete(removeStudent);
 
 
 
 //export default router;
+export default router;

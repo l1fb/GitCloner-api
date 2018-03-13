@@ -6,3 +6,15 @@ export const addStudent = ({ fullname, username, cohort_id }) => {
     RETURNING id, fullname, username, cohort_id
   `;
 };
+
+export const removeStudent = ({ username }) => {
+  return `
+    DELETE FROM studentTable WHERE username = ${ username }
+  `;
+};
+
+export const getStudent = ({ cohort_id }) => {
+  return `
+    SELECT * FROM studentTable WHERE ${ cohort_id }
+  `
+}
