@@ -15,7 +15,7 @@ export const createCohortQuery = async (body) => {
   }
 }
 
-export const removeCohortQuery = async (body) => {
+export const deleteCohortQuery = async (body) => {
   try {
     await db.asyncQuery(deleteCohort(body));
     console.log('Successfully deleted a cohort');

@@ -3,7 +3,7 @@ import express from 'express';
 //import controller
 import {
   addStudent,
-  removeStudent,
+  deleteStudent,
   getStudentsFromCohort
 } from './studentControllers';
 
@@ -14,8 +14,8 @@ const router = express.Router();
 router.route('/addStudent')
   .post(addStudent);
 
-router.route('/removeStudent')
-  .delete(removeStudent);
+router.route('/deleteStudent')
+  .delete(deleteStudent);
 
 router.route('/getStudent/:cohort_id')
   .get(getStudentsFromCohort);

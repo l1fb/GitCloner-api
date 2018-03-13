@@ -7,7 +7,7 @@ export const addStudent = ({ fullname, username, cohort_id }) => {
   `;
 };
 
-export const removeStudent = ({ username }) => {
+export const deleteStudent = ({ username }) => {
   return `
     DELETE FROM studentTable WHERE username = ${ username }
   `;

@@ -6,7 +6,7 @@ export const createCohort = ({cohortname}) => {
   `;
 };
 
-export const removeCohort = ({cohortname}) => {
+export const deleteCohort = ({cohortname}) => {
   return `
     DELETE FROM cohortTable WHERE cohortname = ${ cohortname }
   `;

@@ -2,7 +2,7 @@ import express from 'express';
 
 import {
   createCohort,
-  removeCohort
+  deleteCohort
 } from './cohortController';
 
 const router = express.Router();
@@ -10,5 +10,7 @@ const router = express.Router();
 router.route('/createCohort')
   .post(createCohort);
 
-router.route('./removeCohort')
-  .delete(removeCohort);
+router.route('./deleteCohort')
+  .delete(deleteCohort);
+
+export default router;

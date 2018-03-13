@@ -8,7 +8,7 @@ export const createCohort = async (req, res) => {
     const cohort = createCohortQuery(req.body);
     res.status(200).send(cohort);
   } catch (err) {
-    console.log('Could not create cohort - cont:' err);
+    console.log('Could not create cohort - cont:', err);
   };
 };
 
