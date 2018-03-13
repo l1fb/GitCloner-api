@@ -3,7 +3,8 @@ import express from 'express';
 //import controller
 import {
   addStudent,
-  removeStudent
+  removeStudent,
+  getStudent
 } from './studentControllers';
 
 //delcare express.Router();
@@ -16,7 +17,8 @@ router.route('/addStudent')
 router.route('/removeStudent')
   .delete(removeStudent);
 
-
+router.route('/getStudent/:username')
+  .get(getStudent);
 
 //export default router;
 export default router;
