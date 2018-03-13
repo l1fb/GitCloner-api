@@ -13,7 +13,7 @@ export const removeStudent = ({ username }) => {
   `;
 };
 
-export const getStudent = ({ cohort_id }) => {
+export const getStudentsFromCohort = ({ cohort_id }) => {
   return `
     SELECT * FROM studentTable WHERE ${ cohort_id }
   `

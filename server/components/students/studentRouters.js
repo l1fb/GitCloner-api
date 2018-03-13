@@ -4,7 +4,7 @@ import express from 'express';
 import {
   addStudent,
   removeStudent,
-  getStudent
+  getStudentsFromCohort
 } from './studentControllers';
 
 //delcare express.Router();
@@ -17,8 +17,8 @@ router.route('/addStudent')
 router.route('/removeStudent')
   .delete(removeStudent);
 
-router.route('/getStudent/:username')
-  .get(getStudent);
+router.route('/getStudent/:cohort_id')
+  .get(getStudentsFromCohort);
 
 //export default router;
 export default router;
