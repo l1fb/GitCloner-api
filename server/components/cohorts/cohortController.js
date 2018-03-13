@@ -5,7 +5,7 @@ import {
 
 export const createCohort = async (req, res) => {
   try {
-    const cohort = createCohortQuery(req.body);
+    const cohort = await createCohortQuery(req.body);
     res.status(200).send(cohort);
   } catch (err) {
     console.log('Could not create cohort - cont:', err);

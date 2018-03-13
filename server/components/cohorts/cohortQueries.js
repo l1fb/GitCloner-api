@@ -11,13 +11,13 @@ export const createCohortQuery = async (body) => {
     console.log('Successfully created a cohort')
     return cohort;
   } catch (err) {
-    console.log('Could not created cohort:', err);
+    console.log('Could not create cohort - Queries:', err);
   }
 }
 
 export const deleteCohortQuery = async (body) => {
   try {
-    await db.asyncQuery(deleteCohort(body));
+    await db.queryAsync(deleteCohort(body));
     console.log('Successfully deleted a cohort');
   } catch (err) {
     console.log("Could not remove cohort:", err);

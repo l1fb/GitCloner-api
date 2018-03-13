@@ -28,12 +28,14 @@ export const createStudentTable = async () => {
       `
       CREATE TABLE IF NOT EXISTS studentTable
       (
-        id integer PRIMARY KEY,
-        fullname VARCHAR(50) NOT NULL,
-        username VARCHAR(20) NOT NULL,
+        id SERIAL,
+        fullname VARCHAR(50) UNIQUE NOT NULL,
+        username VARCHAR(20) UNIQUE NOT NULL,
         cohort_id INT NOT NULL,
         CONSTRAINT fk_studentTable_cohort_id
-          FOREIGN KEY(cohort_id) REFERENCES cohorttable(id)
+          FOREIGN KEY(cohort_id) REFERENCES cohorttable(id),
+        CONSTRAINT studentTable_id
+          PRIMARY KEY(id)
       )
       `
     )
@@ -49,8 +51,10 @@ export const createCohortTable = async () => {
       `
       CREATE TABLE IF NOT EXISTS cohortTable
       (
-        id integer PRIMARY KEY,
-        cohortname VARCHAR(10) NOT NULL
+        id SERIAL,
+        cohortname VARCHAR(10) UNIQUE NOT NULL,
+        CONSTRAINT cohortTable_id
+          PRIMARY KEY(id)
       )
       `
     )

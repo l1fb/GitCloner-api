@@ -10,7 +10,7 @@ const router = express.Router();
 router.route('/createCohort')
   .post(createCohort);
 
-router.route('./deleteCohort')
+router.route('/deleteCohort')
   .delete(deleteCohort);
 
 export default router;
