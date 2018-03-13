@@ -17,7 +17,7 @@ router.route('/addStudent')
 router.route('/deleteStudent')
   .delete(deleteStudent);
 
-router.route('/getStudent/:cohort_id')
+router.route('/getStudent')
   .get(getStudentsFromCohort);
 
 //export default router;

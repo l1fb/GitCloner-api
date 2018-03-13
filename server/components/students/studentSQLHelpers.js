@@ -15,6 +15,6 @@ export const deleteStudent = ({ username }) => {
 
 export const getStudentsFromCohort = ({ cohort_id }) => {
   return `
-    SELECT * FROM studentTable WHERE '${ cohort_id }'
+    SELECT * FROM studentTable WHERE cohort_id = ${ cohort_id }
   `
-}
+};

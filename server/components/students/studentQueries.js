@@ -4,7 +4,7 @@ import db from '../../database';
 import { 
   addStudent,
   deleteStudent,
-  getStudentFromCohort
+  getStudentsFromCohort
 } from './studentSQLHelpers';
 // export the queries
 export const addStudentQuery = async (body) => {
@@ -26,10 +26,11 @@ export const deleteStudentQuery = async (body) => {
   }
 }
 
-export const getStudentQuery = async (body) => {
+export const getStudentsQuery = async (body) => {
   try {
-    await db.queryAsync(getStudentsFromCohort(body));
+    const result = await db.queryAsync(getStudentsFromCohort(body));
     console.log(`Get request successful - ${body}`);
+    return result;
   } catch (err) {
     console.log(`Could not get username: ${body}`);
   }

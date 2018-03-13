@@ -1,6 +1,6 @@
 //import from queries
 import { 
-  getStudentQuery,
+  getStudentsQuery,
   deleteStudentQuery,
   addStudentQuery
 } from './studentQueries';
@@ -8,7 +8,8 @@ import {
 
 export const getStudentsFromCohort = async (req, res) => {
   try {
-    const students = await getStudentQuery(req.param);
+    // req.query.cohort_id = Number(req.query.cohort_id)
+    const students = await getStudentsQuery(req.query);
     res.status(200).send(students);
   } catch (err) {
     console.log('Student controller err:', err);
