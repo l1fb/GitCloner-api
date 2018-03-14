@@ -18,10 +18,12 @@ export const getStudentsFromCohort = async (req, res) => {
 
 export const deleteStudent = async (req, res) => {
   try {
-    await deleteStudentQuery(req.body);
+    console.log('req', req.body);
+    await deleteStudentQuery(req.body.username);
     res.status(204).send("Successfully deleted - controller");
   } catch (err) {
     console.log("Could not delete - controller:", err)
+    res.send()
   }
 }
 

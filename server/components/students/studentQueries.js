@@ -19,7 +19,8 @@ export const addStudentQuery = async (body) => {
 
 export const deleteStudentQuery = async (body) => {
   try {
-    await db.queryAsync(deleteStudent(body))
+    console.log('query', body)
+    await db.queryAsync(deleteStudent(body));
     console.log(`Sucessfully delete the student with username: ${body}`);
   } catch (err) {
     console.log(`Could not delete ${body}`);
