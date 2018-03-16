@@ -6,6 +6,7 @@ import {
 } from '../lib/PSQL';
 
 const setup = async () => {
+  // await createDB();
   // await dropDB();
   await createCohortTable();
   await createStudentTable();

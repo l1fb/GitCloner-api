@@ -1,13 +1,15 @@
-
-require('./database');
-
 import express from 'express';
 import body from 'body-parser';
 import router from './routes';
+
+import {} from 'dotenv/config';
+
+const PORT = process.env.SERVER_PORT;
+
+require('./database');
 // require('./database/setup');
 
 const app = express();
-const PORT = 3000;
 
 app.use(body.urlencoded({ extended: false }));
 app.use(body.json());
