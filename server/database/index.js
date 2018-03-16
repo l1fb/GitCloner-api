@@ -4,7 +4,7 @@ import Promise from 'bluebird';
 
 const db = new Pool ({
   user: process.env.USER,
-  database: 'clonerdb',
+  database: 'clonedb',
   host: 'localhost',
   password: process.env.PASSWORD,
   port: process.env.DB_PORT,
@@ -12,8 +12,11 @@ const db = new Pool ({
 })
 
 db.connect((err, client, release) => {
+  
   if (err) {
-    return console.error('DB connection error:', err.stack)
+    console.log('the env!!', process.env.USER, process.env.PASSWORD, process.env.DB_PORT)
+    console.error('DB connection error:', err.stack);
+    return;
   }
 })
 
