@@ -4,7 +4,7 @@ import Promise from 'bluebird';
 
 const db = new Pool ({
   user: process.env.USER,
-  database: 'clonedb',
+  database: 'clonerdb',
   host: 'localhost',
   password: process.env.PASSWORD,
   port: process.env.DB_PORT,
