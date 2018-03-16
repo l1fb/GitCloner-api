@@ -7,7 +7,7 @@ import {} from 'dotenv/config';
 const PORT = process.env.SERVER_PORT;
 
 require('./database');
-// require('./database/setup');
+require('./database/setup');
 
 const app = express();
 
