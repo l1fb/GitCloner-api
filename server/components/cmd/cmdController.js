@@ -1,7 +1,11 @@
 import { Promise } from "bluebird";
 import cmd from "node-cmd-promise";
 
-const cloneRepo = async (cohortname, githubHandle, repoNames) => {
+export const cloneRepo = async (req, res) => {
+  const cohortname = req.body.cohortname;
+  const githubHandle = req.body.githubHandle;
+  const repoNames = req.body.repoNames;
+
   try {
     await cmd("cd"); // goes to the top of the computer
     await cmd("cd Desktop"); // goes to the Desktop
@@ -15,10 +19,9 @@ const cloneRepo = async (cohortname, githubHandle, repoNames) => {
         `git clone https://github.com/${githubHandle}/${cohortname}-${repo}.git`
       );
     });
+    res.status(200).send("Successfully downloaded all the repo(s)");
   } catch (err) {
     error("CMD not working properly");
     throw new Error(err.message);
   }
 };
-
-export default cloneRepo;
