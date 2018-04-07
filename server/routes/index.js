@@ -2,7 +2,7 @@ import express from "express";
 
 import studentRouters from "../components/students/studentRouters";
 import cohortRouters from "../components/cohorts/cohortRouters";
-import cmdRouters from "../components/cmd/cmdRouter.js";
+import cmdRouters from "../components/cmd/cmdRouters.js";
 
 const router = express.Router();
 
