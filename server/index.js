@@ -1,21 +1,25 @@
-import express from 'express';
-import body from 'body-parser';
-import router from './routes';
+import express from "express";
+import body from "body-parser";
+import router from "./routes";
+import cors from "cors";
 
-import {} from 'dotenv/config';
+import {} from "dotenv/config";
 
 const PORT = process.env.SERVER_PORT;
 
-require('./database');
+require("./database");
 // require('./database/setup');
 
 const app = express();
 
+app.use(cors());
 app.use(body.urlencoded({ extended: false }));
 app.use(body.json());
 
-app.use('/api', router);
+app.use("/api", router);
 
 //serve static files
 
-app.listen(PORT, () => console.log('Cloner server is listening on port:', PORT));
+app.listen(PORT, () =>
+  console.log("Cloner server is listening on port:", PORT)
+);
