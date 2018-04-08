@@ -2,11 +2,11 @@ export const cloner = (cohortname, githubHandle, repoNames) => {
   return `
     cd
     cd Desktop
-    if [ ! -d ${cohortname} ]; then mkdir ${cohortname}; fi;
+    [ -d ${cohortname} ] || mkdir ${cohortname}
     cd ${cohortname}
-    if [ ! -d ${githubHandle} ]; then mkdir ${githubHandle}; fi;
+    [ -d ${githubHandle} ] || mkdir ${githubHandle}
     cd ${githubHandle}
-    if [ ! -d ${repoNames} ]; then mkdir ${repoNames}; fi;
+    [ -d ${repoNames} ] || mkdir ${repoNames}
     cd ${repoNames}
     git clone https://github.com/${githubHandle}/${cohortname}-${repoNames}.git
   `;
