@@ -2,12 +2,14 @@ import {
   createDB,
   dropDB,
   createStudentTable,
-  createCohortTable
-} from '../lib/PSQL';
+  createCohortTable,
+  disconnectDB
+} from "../lib/PSQL";
 
 const setup = async () => {
-  // await createDB();
+  // await disconnectDB();
   // await dropDB();
+  // await createDB();
   await createCohortTable();
   await createStudentTable();
 };

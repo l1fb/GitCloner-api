@@ -1,4 +1,8 @@
-import { createCohortQuery, deleteCohortQuery } from "./cohortQueries";
+import {
+  createCohortQuery,
+  deleteCohortQuery,
+  getAllCohortQuery
+} from "./cohortQueries";
 
 export const createCohort = async (req, res) => {
   try {
@@ -16,5 +20,15 @@ export const deleteCohort = async (req, res) => {
     res.status(201).send("Cohort Deleted!");
   } catch (err) {
     console.log("Could not delete cohort:", err);
+  }
+};
+
+export const getAllCohort = async (req, res) => {
+  try {
+    const result = await getAllCohortQuery();
+    console.log("is anything coming back?", result.rows);
+    res.status(200).send(result.rows);
+  } catch (err) {
+    console.log("Could not GETALLCOHORT", err);
   }
 };

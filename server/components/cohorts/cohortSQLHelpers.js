@@ -1,15 +1,19 @@
-export const createCohort = ({cohortname}) => {
-  // console.log('cohort name from SQL', cohortname)
+export const createCohort = ({ cohortname }) => {
   return `
     INSERT INTO cohortTable (cohortname)
-      VALUES ('${ cohortname }')
+      VALUES ('${cohortname}')
     RETURNING id, cohortname
   `;
 };
 
-export const deleteCohort = ({cohortname}) => {
-  console.log('cohort name', cohortname)
+export const deleteCohort = ({ cohortname }) => {
   return `
-    DELETE FROM cohortTable WHERE cohortname = '${ cohortname }'
+    DELETE FROM cohortTable WHERE cohortname = '${cohortname}'
+  `;
+};
+
+export const getAllCohort = () => {
+  return `
+    SELECT * FROM cohortTable
   `;
 };
