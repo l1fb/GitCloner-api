@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "setup": "./server/database/setup.js",
-    "start": "nodemon -r babel-register -r babel-polyfill server",
+    "setup": "node --require dotenv/config -r babel-register -r babel-polyfill ./server/database/setup.js",
+    "start": "nodemon --require dotenv/config -r babel-register -r babel-polyfill server",
     "test": "test"
   },
   "author": "David Chung",

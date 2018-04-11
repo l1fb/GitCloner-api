@@ -1,6 +1,5 @@
 import { Pool } from 'pg';
 import Promise from 'bluebird';
-// import {} from 'dotenv/config';
 
 const db = new Pool ({
   user: process.env.USER,
